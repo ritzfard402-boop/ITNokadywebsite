@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — взято с макета IT NOKADY */
+  --color-brand-red: #cc1329;
+  --color-brand-red-dark: #a10f21;
+  --color-brand-dark: #14161c;
+  --color-brand-dark-soft: #1c1e26;
+  --color-brand-cream: #fbe9da;
+  --color-brand-placeholder: #d9d9d9;
+  --color-brand-ink: #171717;
+  --color-brand-muted: #6b6b6b;
+
+  --font-sans: "Inter", "Manrope", system-ui, -apple-system, sans-serif;
+
+  --container-page: 1180px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-brand-ink);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: var(--container-page);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .orbit-ring {
+    animation: orbit-spin 70s linear infinite;
+  }
+
+  .orbit-counter-spin {
+    display: inline-flex;
+    animation: orbit-counter-spin 70s linear infinite;
+  }
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
