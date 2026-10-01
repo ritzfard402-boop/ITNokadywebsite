@@ -31,9 +31,9 @@ export default function ContactForm() {
           
           {/* Column 1: Animated Robot Anchor */}
           <AnimatedSection className="w-full flex justify-center" y={16}>
-            <RobotAnchor 
-              id="contact" 
-              pose="neutral" 
+            <RobotAnchor
+              id="contact"
+              pose="neutral"
               className="w-[180px] h-[200px] sm:w-[241px] sm:h-[268px] object-contain"
             />
           </AnimatedSection>

@@ -19,7 +19,7 @@ export default function RobotAnchor({ id, pose, className = "" }) {
         return () => unregisterAnchor(id);
     }, [id, pose, isDesktop, registerAnchor, unregisterAnchor]);
     if (!isDesktop) {
-        return <Robot pose={pose} className={className}/>;
+        return <Robot className={className}/>;
     }
     return <div ref={ref} className={`invisible ${className}`} aria-hidden="true"/>;
 }
